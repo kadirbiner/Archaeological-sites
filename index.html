@@ -3,85 +3,86 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tez | Harita Görselleştirmeleri</title>
+  <title>Tez | Arkeolojik Risk Analizi ve Kümeleme</title>
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
     body { 
       font-family: 'Inter', sans-serif; 
-      background-color: #f4f7f9; 
-      color: #333;
+      background-color: #f8f9fa; 
+      color: #2d3436;
     }
     .hero-section {
-      background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+      background: linear-gradient(135deg, #1e272e 0%, #2f3640 100%);
       color: white;
-      padding: 80px 0;
-      margin-bottom: 40px;
-      border-bottom: 5px solid #ffc107;
+      padding: 60px 0;
+      border-bottom: 4px solid #f1c40f;
     }
-    .card {
+    /* Ana Risk Kartı Stili */
+    .main-feature-card {
+      border: none;
+      border-radius: 25px;
+      background: #ffffff;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border-left: 8px solid #f1c40f;
+      transition: transform 0.3s ease;
+    }
+    .main-feature-card:hover {
+      transform: scale(1.01);
+    }
+    /* Küçük Algoritma Kartları */
+    .algo-card {
       border: none;
       border-radius: 20px;
       transition: all 0.3s ease;
       background: white;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    .algo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
     }
-    .algo-icon-wrapper {
-      width: 80px;
-      height: 80px;
-      background: #eef2f7;
-      border-radius: 50%;
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
-      color: #2a5298;
-      font-size: 2.5rem;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
     }
-    .btn-map {
-      background-color: #ffffff;
-      color: #1e3c72;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      padding: 12px 15px;
-      text-align: left;
-      transition: all 0.2s ease;
+    .btn-custom {
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-weight: 600;
+      transition: all 0.2s;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      text-decoration: none;
+      justify-content: center;
     }
-    .btn-map:hover {
-      background-color: #1e3c72;
-      color: white;
-      border-color: #1e3c72;
-      transform: scale(1.02);
+    .btn-main {
+      background-color: #f1c40f;
+      color: #1e272e;
+      border: none;
     }
-    .badge-params {
-      font-size: 0.7rem;
-      background: rgba(0,0,0,0.06);
-      color: #666;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-weight: 600;
+    .btn-main:hover {
+      background-color: #d4ac0d;
+      color: #1e272e;
     }
-    .btn-map:hover .badge-params {
-      background: rgba(255,255,255,0.2);
-      color: white;
+    .section-title {
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 30px;
+      color: #2f3640;
     }
     footer {
-      margin-top: 100px;
-      padding: 50px 0;
       background: #ffffff;
+      padding: 40px 0;
+      margin-top: 80px;
       border-top: 1px solid #eee;
     }
   </style>
@@ -90,57 +91,77 @@
 
   <header class="hero-section text-center">
     <div class="container">
-      <h1 class="display-3 fw-bold mb-3">Tez Harita Görselleştirmeleri</h1>
-      <p class="lead opacity-75 fs-4">Kümeleme Algoritmalarının Coğrafi Analizi ve Veri Madenciliği Sonuçları</p>
+      <h1 class="display-4 fw-bold mb-2">Tez Çalışması Analiz Portalı</h1>
+      <p class="lead opacity-75">Arkeolojik Envanter Üzerinde Veri Madenciliği ve CBS Uygulamaları</p>
     </div>
   </header>
 
-  <div class="container">
-    <div class="row g-4 justify-content-center">
+  <div class="container mt-5">
+    
+    <div class="row mb-5 justify-content-center">
+      <div class="col-lg-10">
+        <div class="main-feature-card p-5">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <span class="badge bg-warning text-dark mb-2 px-3 py-2">ÖNE ÇIKAN ANALİZ</span>
+              <h2 class="display-6 fw-bold">Bütünleşik Risk Analiz Dashboard</h2>
+              <p class="lead text-muted">Tüm arkeolojik alanların risk faktörleri, yoğunluk haritaları ve istatistiksel dağılımlarının tek bir panel üzerinden yönetildiği kapsamlı görselleştirme.</p>
+              <a href="Profesyonel_Arkeo_Harita.html" class="btn btn-main btn-lg shadow">
+                <i class="bi bi-cpu-fill me-2"></i> Dashboard'u Görüntüle
+              </a>
+            </div>
+            <div class="col-md-4 text-center d-none d-md-block">
+              <i class="bi bi-shield-exclamation text-warning" style="font-size: 8rem;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="section-title text-center">Kümeleme Algoritmaları</h3>
+
+    <div class="row g-4">
       
       <div class="col-md-4">
-        <div class="card h-100 p-4 text-center">
-          <div class="algo-icon-wrapper">
-            <i class="bi bi-patch-check-fill"></i>
+        <div class="card algo-card h-100 p-4">
+          <div class="icon-box bg-primary bg-opacity-10 text-primary">
+            <i class="bi bi-grid-3x3-gap-fill"></i>
           </div>
-          <h3 class="fw-bold">K-Means</h3>
-          <p class="text-muted small px-2">Veri kümesini, benzerliklerine göre önceden belirlenmiş (K) adet kümeye ayırır.</p>
+          <h4 class="fw-bold">K-Means</h4>
+          <p class="text-muted small">Merkez tabanlı kümeleme ile arkeolojik verilerin K=3 parametresine göre dağılımı.</p>
           <div class="mt-auto">
-            <a href="k-means_k3_harita.html" class="btn btn-map shadow-sm">
-              <span><i class="bi bi-geo-alt-fill me-2"></i> K=3 Haritası</span>
-              <span class="badge-params">K=3</span>
+            <a href="k-means_k3_harita.html" class="btn btn-outline-primary w-100 btn-custom">
+              Haritayı Aç
             </a>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="card h-100 p-4 text-center">
-          <div class="algo-icon-wrapper">
-            <i class="bi bi-node-plus-fill"></i>
+        <div class="card algo-card h-100 p-4">
+          <div class="icon-box bg-success bg-opacity-10 text-success">
+            <i class="bi bi-diagram-3-fill"></i>
           </div>
-          <h3 class="fw-bold">HDBSCAN</h3>
-          <p class="text-muted small px-2">Hiyerarşik ve yoğunluk tabanlı kümeleme ile karmaşık veri yapılarını analiz eder.</p>
+          <h4 class="fw-bold">HDBSCAN</h4>
+          <p class="text-muted small">Hiyerarşik yoğunluk analizi. Gürültü verileri ayıklanmış kararlı kümeler.</p>
           <div class="mt-auto">
-            <a href="hdbscan_harita.html" class="btn btn-map shadow-sm">
-              <span><i class="bi bi-layers-half me-2"></i> Ana Analiz</span>
-              <span class="badge-params">mcs:20, ms:10</span>
+            <a href="hdbscan_harita.html" class="btn btn-outline-success w-100 btn-custom">
+              Haritayı Aç
             </a>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="card h-100 p-4 text-center">
-          <div class="algo-icon-wrapper">
+        <div class="card algo-card h-100 p-4">
+          <div class="icon-box bg-info bg-opacity-10 text-info">
             <i class="bi bi-radar"></i>
           </div>
-          <h3 class="fw-bold">DBSCAN</h3>
-          <p class="text-muted small px-2">Yoğunluk temelli algoritma; gürültü verileri (outliers) başarılı şekilde ayıklar.</p>
+          <h4 class="fw-bold">DBSCAN</h4>
+          <p class="text-muted small">20km yarıçaplı komşuluk analizi ile yoğunluk tabanlı kümeleme sonuçları.</p>
           <div class="mt-auto">
-            <a href="dbscan_eps20km.html" class="btn btn-map shadow-sm">
-              <span><i class="bi bi-pin-map-fill me-2"></i> 20km Analizi</span>
-              <span class="badge-params">eps:20km</span>
+            <a href="dbscan_eps20km.html" class="btn btn-outline-info w-100 btn-custom">
+              Haritayı Aç
             </a>
           </div>
         </div>
@@ -151,12 +172,10 @@
 
   <footer class="text-center">
     <div class="container">
-      <div class="mb-3">
-        <i class="bi bi-info-circle-fill text-primary me-2"></i> 
-        <span class="text-muted">Not: Tüm haritalar interaktif yapıda olup yakınlaştırma özelliğine sahiptir.</span>
+      <p class="text-muted mb-0"><b>Tez Başlığı:</b> Arkeolojik Alanların Risk Analizinde Makine Öğrenmesi Yaklaşımları</p>
+      <div class="mt-3 small text-secondary">
+        Veri tabanı güncelliği: 2025 &copy; Tüm Hakları Saklıdır
       </div>
-      <hr class="w-25 mx-auto my-4">
-      <p class="small text-secondary mb-0">GitHub Pages üzerinden yayınlanmaktadır &copy; 2026</p>
     </div>
   </footer>
 
